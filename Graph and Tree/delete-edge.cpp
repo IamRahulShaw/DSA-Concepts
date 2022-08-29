@@ -27,12 +27,12 @@ int deleteEdge(vector<int> &A, vector<vector<int>> &B)
         graph[B[i][1]].push_back(B[i][0]);
     }
     dfs(1, 0, A);
-    int max_product = -1;
+    long long max_product = -1;
     for (int i = 2; i <= B.size() + 1; i++)
     {
         int part_1 = subtree_sum[i];
         int part_2 = subtree_sum[1] - subtree_sum[i];
-        int product = (part_1 * 1LL * part_2);
+        long long product = (part_1 * 1LL * part_2);
         max_product = max(max_product, product);
     }
     return max_product % M;
