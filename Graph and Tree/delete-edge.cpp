@@ -32,7 +32,7 @@ int deleteEdge(vector<int> &A, vector<vector<int>> &B)
     {
         int part_1 = subtree_sum[i];
         int part_2 = subtree_sum[1] - subtree_sum[i];
-        long long product = (part_1 * 1LL * part_2);
+        long long product = (part_1 * 1LL * part_2); // Here we don't use % M because after mod with M, the value become small. So, if any number literally greater than a number but it become less than M. So, we use long long.
         max_product = max(max_product, product);
     }
     return max_product % M;
